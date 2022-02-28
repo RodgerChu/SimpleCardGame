@@ -38,13 +38,15 @@ namespace SimpleCardGame
 
 		private static Some<CardDeck> ShuffleCards(Some<Random> random, Some<CardDeck> cards)
 		{
-			for (int i = 0; i < cards.Value.cards.Length - 1; ++i) 
+			CardInfo[] shuffledCards = new CardInfo[cards.Value.cards.Length];
+			cards.Value.cards.CopyTo(shuffledCards, 0);
+			for (int i = 0; i < shuffledCards.Length - 1; ++i) 
 			{
 				var r = random.Value.Next(i, cards.Value.cards.Length);
-				(cards.Value.cards[r], cards.Value.cards[i]) = (cards.Value.cards[i], cards.Value.cards[r]);
+				(shuffledCards[r], shuffledCards[i]) = (shuffledCards[i], shuffledCards[r]);
 			}
 
-			return cards;
+			return new Some<CardDeck>(new CardDeck(shuffledCards));
 		}
 
 		private static Some<SplittedInTwoCardDeck> SplitDeckInHalves(Some<CardDeck> cards)
