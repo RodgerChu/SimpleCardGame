@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCardGame", "SimpleCardGame\SimpleCardGame.csproj", "{08B39ECE-9656-45B7-A70A-996C9494997B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{08B39ECE-9656-45B7-A70A-996C9494997B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08B39ECE-9656-45B7-A70A-996C9494997B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08B39ECE-9656-45B7-A70A-996C9494997B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08B39ECE-9656-45B7-A70A-996C9494997B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
