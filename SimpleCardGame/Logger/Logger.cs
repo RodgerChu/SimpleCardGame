@@ -16,12 +16,10 @@ public static class Logger
 	public static void Log(Some<SplittedInTwoCardDeck> splittedDecks)
 	{
 		Console.WriteLine("Player one cards | Player two cards");
-		var pOneCards = splittedDecks.Value.firstHalf;
-		var pTwoCards = splittedDecks.Value.secondHalf;
-		for (int i = 0; i < pOneCards.Length; i++)
+		splittedDecks.Value.ForEach((index, pOneCard, pTwoCard) =>
 		{
-			Console.WriteLine($"{pOneCards[i].value.ToString()} {pOneCards[i].suit.ToString()} | {pTwoCards[i].value.ToString()} {pTwoCards[i].suit.ToString()}");
-		}
+			Console.WriteLine($"{pOneCard.value.ToString()} {pOneCard.suit.ToString()} | {pTwoCard.value.ToString()} {pTwoCard.suit.ToString()}");
+		});
 	}
 
 	public static void Log(Some<CardGameResult> gamePoints)

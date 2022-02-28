@@ -55,19 +55,19 @@ namespace SimpleCardGame
 
 			var pOneCardIndex = 0;
 			var pTwoCardIndex = 0;
-			for (int i = 0; i < halfDeckLength; i++)
+			cards.Value.ForEach((index, card) =>
 			{
-				if (i % 2 == 0)
+				if ((index + 1) % 2 == 0)
 				{
-					pOneCards[pOneCardIndex] = cards.Value.cards[i];
+					pOneCards[pOneCardIndex] = card;
 					pOneCardIndex++;
 				}
 				else
 				{
-					pTwoCards[pTwoCardIndex] = cards.Value.cards[i];
+					pTwoCards[pTwoCardIndex] = card;
 					pTwoCardIndex++;
 				}
-			}
+			});
 			
 			return new Some<SplittedInTwoCardDeck>(new SplittedInTwoCardDeck(pOneCards, pTwoCards));
 		}
